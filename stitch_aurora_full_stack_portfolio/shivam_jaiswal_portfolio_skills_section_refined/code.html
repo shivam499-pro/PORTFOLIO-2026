@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shivam Jaiswal - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#191c1e",
+                      "on-tertiary-fixed": "#3e0022",
+                      "outline": "#7b7487",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "error": "#ba1a1a",
+                      "on-surface": "#191c1e",
+                      "surface-dim": "#d8dadc",
+                      "primary-fixed-dim": "#d2bbff",
+                      "outline-variant": "#ccc3d8",
+                      "surface-container-low": "#f2f4f6",
+                      "on-secondary-container": "#006172",
+                      "on-tertiary-fixed-variant": "#8c0053",
+                      "tertiary": "#9b005c",
+                      "on-tertiary-container": "#ffdde7",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "background": "#f7f9fb",
+                      "inverse-on-surface": "#eff1f3",
+                      "inverse-surface": "#2d3133",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "primary": "#630ed4",
+                      "on-primary-container": "#ede0ff",
+                      "primary-fixed": "#eaddff",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#57dffe",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-container": "#eceef0",
+                      "on-secondary-fixed": "#001f26",
+                      "surface": "#f7f9fb",
+                      "on-primary-fixed-variant": "#5a00c6",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#d2bbff",
+                      "surface-bright": "#f7f9fb",
+                      "tertiary-container": "#bf2076",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e0e3e5",
+                      "primary-container": "#7c3aed",
+                      "on-primary-fixed": "#25005a",
+                      "tertiary-fixed": "#ffd9e4",
+                      "tertiary-fixed-dim": "#ffb0cd",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#4a4455",
+                      "surface-tint": "#732ee4",
+                      "secondary-fixed": "#acedff",
+                      "secondary": "#00687a",
+                      "surface-container-highest": "#e0e3e5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "bento-gap": "20px",
+                      "base": "4px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "label-caps": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            font-family: 'Geist', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Aurora Background */
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: theme('colors.surface-bright');
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(160px);
+            opacity: 0.4;
+            border-radius: 50%;
+            transition: all 1s ease-in-out;
+        }
+
+        .blob-1 {
+            top: -15%;
+            left: -15%;
+            width: 70vw;
+            height: 70vw;
+            background: #7c3aed; /* Vibrant Purple (primary-container) */
+        }
+
+        .blob-2 {
+            bottom: -15%;
+            right: -15%;
+            width: 80vw;
+            height: 80vw;
+            background: #00e5ff; /* Vibrant Cyan */
+        }
+
+        .blob-3 {
+            top: 30%;
+            left: 20%;
+            width: 60vw;
+            height: 60vw;
+            background: #ff2d92; /* Vibrant Pink */
+            opacity: 0.25;
+        }
+
+        /* Glassmorphism & Bento Base */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+            border-radius: theme('borderRadius.xl');
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: transparent;
+            box-shadow: 
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+                0 10px 30px -10px rgba(124, 58, 237, 0.15);
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.secondary-container'));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.secondary-container'));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.secondary-container'));
+            color: theme('colors.on-primary');
+            border-radius: theme('borderRadius.DEFAULT');
+            padding: 12px 24px;
+            font-family: theme('fontFamily.label-caps');
+            font-size: theme('fontSize.label-caps')[0];
+            font-weight: theme('fontSize.label-caps')[1].fontWeight;
+            letter-spacing: theme('fontSize.label-caps')[1].letterSpacing;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 15px rgba(99, 14, 212, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border: 1px solid theme('colors.outline-variant');
+            color: theme('colors.on-surface');
+            border-radius: theme('borderRadius.DEFAULT');
+            padding: 12px 24px;
+            font-family: theme('fontFamily.label-caps');
+            font-size: theme('fontSize.label-caps')[0];
+            font-weight: theme('fontSize.label-caps')[1].fontWeight;
+            letter-spacing: theme('fontSize.label-caps')[1].letterSpacing;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: theme('colors.primary');
+            color: theme('colors.primary');
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid theme('colors.outline-variant');
+            color: theme('colors.on-surface-variant');
+            padding: 4px 12px;
+            border-radius: theme('borderRadius.full');
+            font-family: theme('fontFamily.label-caps');
+            font-size: theme('fontSize.label-caps')[0];
+            font-weight: theme('fontSize.label-caps')[1].fontWeight;
+            letter-spacing: theme('fontSize.label-caps')[1].letterSpacing;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+            }    
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+    
+        @keyframes float-aurora {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(2%, 2%) scale(1.02);
+            }
+            66% {
+                transform: translate(-1%, 3%) scale(0.98);
+            }
+        }
+
+        .blob {
+            animation: float-aurora 8s ease-in-out infinite alternate;
+        }
+
+        .blob-1 {
+            animation-duration: 8s;
+        }
+
+        .blob-2 {
+            animation-duration: 10s;
+            animation-delay: -2s;
+        }
+
+        .blob-3 {
+            animation-duration: 12s;
+            animation-delay: -4s;
+        }
+        </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Aurora Background -->
+<div class="aurora-bg">
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+</div>
+<!-- 1. Navbar -->
+<nav class="fixed top-0 w-full z-50 bg-white/40 dark:bg-black/40 backdrop-blur-xl border-b border-white/60 dark:border-white/20 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-primary-fixed-dim tracking-tighter" href="#">SJ</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#about">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#skills">Skills</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#projects">Projects</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#dsa">DSA</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#education">Education</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+</div>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-4">
+<div class="pill border-none bg-surface-container-low shadow-sm">
+<span class="pulse-dot"></span>
+<span class="text-[10px]">Open to Internships</span>
+</div>
+<button class="btn-primary">Download Resume</button>
+</div>
+<!-- Mobile Menu Toggle (Visual only for HTML) -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-32 pb-24 space-y-32">
+<!-- 2. Hero Section -->
+<section class="relative min-h-[716px] flex flex-col md:flex-row items-center justify-center gap-gutter" id="hero">
+<div class="flex-1 space-y-6 text-center md:text-left z-10">
+<div class="inline-block pill mb-4 border-primary/20 bg-primary/5 text-primary">
+<span class="material-symbols-outlined text-sm">waving_hand</span>
+                    Welcome to my space
+                </div>
+<h1 class="font-display-lg text-display-lg text-on-background">
+                    Hi, I'm <br class="hidden md:block"/>
+<span class="text-gradient">Shivam Jaiswal</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant">
+                    Full-Stack Developer &amp; AI Enthusiast.
+                </p>
+<p class="font-body-lg text-body-lg text-outline max-w-2xl mx-auto md:mx-0">
+                    Crafting digital experiences with clean code and modern design. Currently studying at Rajalakshmi Engineering College.
+                </p>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+<button class="btn-primary">View My Work</button>
+<button class="btn-secondary">Contact Me</button>
+</div>
+<div class="flex items-center justify-center md:justify-start gap-4 pt-6">
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-3xl">code</span></a>
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-3xl">terminal</span></a>
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-3xl">work</span></a>
+</div>
+</div>
+<div class="flex-1 w-full flex justify-center z-10">
+<div class="glass-card w-full max-w-md aspect-square p-8 flex items-center justify-center bg-gradient-to-br from-white/60 to-white/10 border-white/80">
+<!-- Abstract Tech Graphic Placeholder -->
+<div class="relative w-full h-full flex items-center justify-center">
+<div class="absolute w-3/4 h-3/4 border border-primary/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute w-1/2 h-1/2 border border-secondary/40 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+<span class="material-symbols-outlined text-8xl text-gradient">data_object</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. About Section -->
+<section class="scroll-mt-32" id="about">
+<h2 class="font-headline-md text-headline-md text-on-background mb-8">About Me</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<!-- Profile Card -->
+<div class="glass-card md:col-span-4 p-8 flex flex-col items-center text-center space-y-4">
+<div class="w-32 h-32 rounded-full overflow-hidden border-2 border-white shadow-lg mb-4 bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-outline">person</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-bold">Shivam Jaiswal</h3>
+<p class="font-body-md text-body-md text-outline">Developer • Designer • Innovator</p>
+<div class="w-full h-px bg-white/50 my-4"></div>
+<div class="pill border-primary/30 bg-primary/10 text-primary w-full justify-center">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+                        Building AI Career Navigator '26
+                    </div>
+</div>
+<!-- Stats & Bio -->
+<div class="md:col-span-8 flex flex-col gap-bento-gap">
+<div class="glass-card p-8 flex-1">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            I am a passionate software engineer with a strong foundation in full-stack development and an active interest in artificial intelligence. I thrive on solving complex problems and turning ideas into scalable, user-centric applications.
+                        </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            My journey in tech is driven by curiosity and a commitment to continuous learning. When I'm not coding, you can find me exploring new design systems or participating in hackathons.
+                        </p>
+</div>
+<div class="grid grid-cols-3 gap-bento-gap">
+<div class="glass-card p-6 flex flex-col items-center justify-center text-center">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold">10+</span>
+<span class="font-label-caps text-label-caps text-outline mt-2">Projects</span>
+</div>
+<div class="glass-card p-6 flex flex-col items-center justify-center text-center">
+<span class="font-display-lg-mobile text-display-lg-mobile text-secondary-container font-bold">500+</span>
+<span class="font-label-caps text-label-caps text-outline mt-2">DSA Problems</span>
+</div>
+<div class="glass-card p-6 flex flex-col items-center justify-center text-center">
+<span class="font-display-lg-mobile text-display-lg-mobile text-tertiary font-bold">500+</span>
+<span class="font-label-caps text-label-caps text-outline mt-2">Commits</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="scroll-mt-32" id="skills">
+<h2 class="font-headline-md text-headline-md text-on-background mb-8">Skills &amp; Tech Stack</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<!-- Frontend Card -->
+<div class="glass-card md:col-span-8 p-8 group hover:shadow-[0_0_30px_-5px_rgba(99,14,212,0.3)]">
+<div class="flex items-center gap-3 mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">html</span>
+<h3 class="font-headline-md text-2xl font-bold">Frontend Development</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="pill bg-white/40 border-white/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"><span class="material-symbols-outlined text-sm">rebase_edit</span>React</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"><span class="material-symbols-outlined text-sm">layers</span>Next.js</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"><span class="material-symbols-outlined text-sm">palette</span>Tailwind CSS</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"><span class="material-symbols-outlined text-sm">javascript</span>TypeScript</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"><span class="material-symbols-outlined text-sm">animation</span>Framer Motion</span>
+</div>
+</div>
+<!-- AI/ML Card -->
+<div class="glass-card md:col-span-4 p-8 group hover:shadow-[0_0_30px_-5px_rgba(255,45,146,0.3)]">
+<div class="flex items-center gap-3 mb-6 text-tertiary">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+<h3 class="font-headline-md text-2xl font-bold">AI &amp; ML</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="pill bg-white/40 border-white/60 hover:bg-tertiary/10 hover:text-tertiary transition-all duration-300"><span class="material-symbols-outlined text-sm">hub</span>LangChain</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-tertiary/10 hover:text-tertiary transition-all duration-300"><span class="material-symbols-outlined text-sm">smart_toy</span>OpenAI</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-tertiary/10 hover:text-tertiary transition-all duration-300"><span class="material-symbols-outlined text-sm">face</span>Hugging Face</span>
+</div>
+</div>
+<!-- Backend Card -->
+<div class="glass-card md:col-span-4 p-8 group hover:shadow-[0_0_30px_-5px_rgba(0,229,255,0.3)]">
+<div class="flex items-center gap-3 mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl">settings_ethernet</span>
+<h3 class="font-headline-md text-2xl font-bold">Backend</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="pill bg-white/40 border-white/60 hover:bg-secondary/10 hover:text-secondary transition-all duration-300"><span class="material-symbols-outlined text-sm">token</span>Node.js</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-secondary/10 hover:text-secondary transition-all duration-300"><span class="material-symbols-outlined text-sm">api</span>Express</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-secondary/10 hover:text-secondary transition-all duration-300"><span class="material-symbols-outlined text-sm">terminal</span>Python</span>
+</div>
+</div>
+<!-- Database Card -->
+<div class="glass-card md:col-span-4 p-8 group hover:shadow-[0_0_30px_-5px_rgba(124,58,237,0.3)]">
+<div class="flex items-center gap-3 mb-6 text-primary-container">
+<span class="material-symbols-outlined text-3xl">database</span>
+<h3 class="font-headline-md text-2xl font-bold">Database</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="pill bg-white/40 border-white/60 hover:bg-primary-container/10 hover:text-primary-container transition-all duration-300"><span class="material-symbols-outlined text-sm">storage</span>MongoDB</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-primary-container/10 hover:text-primary-container transition-all duration-300"><span class="material-symbols-outlined text-sm">dataset</span>PostgreSQL</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-primary-container/10 hover:text-primary-container transition-all duration-300"><span class="material-symbols-outlined text-sm">local_fire_department</span>Firebase</span>
+</div>
+</div>
+<!-- DevOps Card -->
+<div class="glass-card md:col-span-4 p-8 group hover:shadow-[0_0_30px_-5px_rgba(0,104,122,0.3)]">
+<div class="flex items-center gap-3 mb-6 text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl">cloud_sync</span>
+<h3 class="font-headline-md text-2xl font-bold">DevOps</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="pill bg-white/40 border-white/60 hover:bg-on-secondary-container/10 hover:text-on-secondary-container transition-all duration-300"><span class="material-symbols-outlined text-sm">account_tree</span>Git</span>
+<span class="material-symbols-outlined text-sm">ship</span><span class="pill bg-white/40 border-white/60 hover:bg-on-secondary-container/10 hover:text-on-secondary-container transition-all duration-300">Docker</span>
+<span class="pill bg-white/40 border-white/60 hover:bg-on-secondary-container/10 hover:text-on-secondary-container transition-all duration-300"><span class="material-symbols-outlined text-sm">publish</span>Vercel</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 12. Footer -->
+<footer class="w-full py-12 bg-transparent border-t border-white/20 mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-bento-gap max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary font-bold tracking-tighter">SJ</div>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-outline hover:text-primary transition-colors duration-200 uppercase" href="#">Twitter</a>
+<a class="font-label-caps text-label-caps text-outline hover:text-primary transition-colors duration-200 uppercase" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps text-outline hover:text-primary transition-colors duration-200 uppercase" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-outline hover:text-primary transition-colors duration-200 uppercase" href="#">LeetCode</a>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface dark:text-on-surface-variant">
+                © 2024 Shivam Jaiswal. Built with precision.
+            </div>
+</div>
+</footer>
+</body></html>
