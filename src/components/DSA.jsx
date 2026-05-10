@@ -5,9 +5,9 @@ import { Terminal, Trophy, Binary, ChevronRight } from 'lucide-react';
 
 const DSA = () => {
   const icons = {
-    Code2: Terminal,
-    Trophy: Trophy,
-    Binary: Binary
+    terminal: Terminal,
+    leaderboard: Trophy,
+    code: Binary
   };
 
   return (
@@ -58,18 +58,30 @@ const DSA = () => {
                 <Icon size={40} className="text-on-surface group-hover:text-primary transition-colors" />
               </div>
               <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{platform.name}</h3>
-              <p className="text-primary font-bold text-lg mb-4">{platform.solved}</p>
+              <p className="text-primary font-bold text-lg mb-4">
+                {platform.name === 'LeetCode' && `${platform.solved} Solved`}
+                {platform.name === 'HackerRank' && platform.stars}
+                {platform.name === 'GitHub' && `${platform.repos} Repositories`}
+              </p>
               
               <div className="flex flex-wrap justify-center gap-2 mb-8">
-                {platform.tags.map(tag => (
+                {(Array.isArray(platform.topicStrengths) 
+                  ? platform.topicStrengths 
+                  : platform.topicStrengths?.fundamental || platform.topLanguages || platform.badges || []
+                ).map(tag => (
                   <span key={tag} className="pill text-[9px] px-2 py-0.5">{tag}</span>
                 ))}
               </div>
               
-              <button className="btn-secondary w-full py-3 text-[10px] group/btn">
+              <a 
+                href={platform.profileUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-secondary w-full py-3 text-[10px] group/btn text-center"
+              >
                 View Profile
-                <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-              </button>
+                <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform inline ml-1" />
+              </a>
             </motion.div>
           );
         })}

@@ -39,8 +39,11 @@ const Projects = () => {
             <div className="relative w-full aspect-video bg-surface-variant/30 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <Monitor size={64} className="text-outline/40 group-hover:scale-110 group-hover:text-primary/40 transition-all duration-700" />
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 flex gap-2">
                 <span className="pill bg-white/60 backdrop-blur-md border-none text-[9px]">{project.category}</span>
+                {project.status && (
+                  <span className="pill bg-primary/10 text-primary backdrop-blur-md border-none text-[9px] font-bold uppercase">{project.status}</span>
+                )}
               </div>
             </div>
 
@@ -51,17 +54,19 @@ const Projects = () => {
               </p>
               
               <div className="flex flex-wrap gap-2 pt-2">
-                {project.tags.map(tag => (
+                {project.techStack.map(tag => (
                   <span key={tag} className="text-[10px] font-bold text-outline uppercase tracking-wider bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">{tag}</span>
                 ))}
               </div>
 
               <div className="flex gap-4 mt-auto pt-6 border-t border-outline-variant/20">
-                <a href={project.link} className="btn-primary flex-1 py-3 text-[10px]">
-                  <ExternalLink size={14} />
-                  Demo
-                </a>
-                <a href={project.github} className="btn-secondary flex-1 py-3 text-[10px]">
+                {project.live && (
+                  <a href={project.live} className="btn-primary flex-1 py-3 text-[10px]" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink size={14} />
+                    Demo
+                  </a>
+                )}
+                <a href={project.github} className="btn-secondary flex-1 py-3 text-[10px]" target="_blank" rel="noopener noreferrer">
                   <Code2 size={14} />
                   Code
                 </a>

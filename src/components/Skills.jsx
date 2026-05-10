@@ -18,11 +18,11 @@ const Skills = () => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
         {skillCategories.map((category, index) => {
           const Icon = Icons[category.icon] || Icons.Code2;
-          const isWide = category.id === 'frontend';
+          const isWide = category.category === 'Frontend';
           
           return (
             <motion.div 
-              key={category.id}
+              key={category.category}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -38,11 +38,11 @@ const Skills = () => {
                 <div className="p-3 rounded-xl bg-current/10">
                   <Icon size={28} />
                 </div>
-                <h3 className="text-2xl font-bold">{category.title}</h3>
+                <h3 className="text-2xl font-bold">{category.category}</h3>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {category.skills.map((skill) => (
+                {category.items.map((skill) => (
                   <span 
                     key={skill}
                     className="pill py-2 px-4 transition-all duration-300 hover:bg-white hover:shadow-sm"
