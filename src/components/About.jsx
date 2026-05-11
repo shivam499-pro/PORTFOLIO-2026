@@ -38,8 +38,12 @@ const About = () => {
           className="glass-card md:col-span-4 p-8 flex flex-col items-center text-center space-y-6"
         >
           <div className="relative group">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white shadow-xl bg-surface-variant flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-              <User size={64} className="text-outline" />
+            <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white shadow-xl transition-transform duration-500 group-hover:scale-105">
+              <img
+                src="/photo-6.jpeg"
+                alt="Shivam Jaiswal"
+                className="w-full h-full object-cover"
+              />
             </div>
             <motion.div
               animate={{ rotate: 360 }}
@@ -60,6 +64,22 @@ const About = () => {
             <Rocket size={14} className="mr-2" />
             <span className="text-[10px]">Building AI Career Navigator '26</span>
           </div>
+
+          <div className="pill border-primary/30 bg-primary/10 text-primary w-full justify-center py-2">
+            <Rocket size={14} className="mr-2" />
+            <span className="text-[10px]">Completed Project UPI-SECURE-PAY</span>
+          </div>
+
+          <div className="pill border-primary/30 bg-primary/10 text-primary w-full justify-center py-2">
+            <Rocket size={14} className="mr-2" />
+            <span className="text-[10px]">Completed Project Cattle-breed-recognitions</span>
+          </div>
+
+          <div className="pill border-primary/30 bg-primary/10 text-primary w-full justify-center py-2">
+            <Rocket size={14} className="mr-2" />
+            <span className="text-[10px]"> Completed Explainable AI Credit Scoring System</span>
+          </div>
+
 
           {/* Languages */}
           <div className="w-full space-y-2">
@@ -106,7 +126,7 @@ const About = () => {
               I am a passionate <span className="text-primary font-semibold">3rd year CSE student</span> at Rajalakshmi Engineering College, Chennai with a strong foundation in <span className="text-primary font-semibold">full-stack development</span> and an active interest in <span className="text-secondary font-semibold">artificial intelligence</span>. I build real-world projects that solve actual problems — not tutorial clones.
             </p>
             <p className="text-lg text-on-surface-variant leading-relaxed">
-              I've built AI-powered systems for fraud detection, career guidance, and cattle breed recognition. When I'm not coding, you'll find me solving DSA problems or participating in hackathons like <span className="font-semibold text-on-surface">Smart India Hackathon 2025</span>.
+              Moved from Nepal to Chennai to study CS — best decision I've made so far. I'm the kind of person who can't just follow a tutorial. Every project I build has to solve something real. So far that's meant building a fraud detection engine for UPI payments, an AI that identifies cattle breeds for farmers, and a career guidance tool I wish existed when I was choosing my path. 3rd year at REC. Still figuring things out — but shipping code along the way.
             </p>
 
             {/* Interests */}
