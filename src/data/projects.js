@@ -84,7 +84,7 @@ export const projects = [
     live: null,
     featured: false,
     category: "Mobile",
-    status: "Completed",
+    status: "In Development",
   },
   {
     id: 6,
