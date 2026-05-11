@@ -1,33 +1,39 @@
-// Experience section — currently empty (no internships yet)
-// TODO: Add real internship data when available using the structure below:
-// {
-//   title: "Role Title",
-//   company: "Company Name",
-//   period: "Mon YYYY - Mon YYYY",
-//   description: ["Achievement 1", "Achievement 2", "Achievement 3"],
-//   tags: ["Tech1", "Tech2"],
-//   type: "work"
-// }
-
 export const experience = [
   {
     id: 1,
-    title: "Frontend Developer (Part-Time)",
-    company: "TechNova Solutions",
-    period: "Oct 2023 – Jan 2024 (4 months)",
+    title: "Java Programming Intern",
+    company: "InternPe",
+    companyUrl: "https://www.internpe.in",
+    period: "Jan 05 – Jan 18, 2026",
     location: "Remote",
     description: [
-      "Developed reusable UI components for a SaaS platform using React, TypeScript, and Tailwind CSS.",
-      "Collaborated with backend engineers to integrate REST APIs and optimize data fetching performance.",
-      "Participated in Agile ceremonies (daily standups, sprint planning) and code reviews, contributing to a 15% improvement in team velocity.",
+      "Completed structured Java programming training covering OOP concepts, data structures, and core Java fundamentals.",
+      "Worked on Java-based assignments and projects demonstrating understanding of classes, inheritance, and exception handling.",
     ],
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Vite", "Git"],
+    techStack: ["Java", "OOP", "Data Structures"],
     type: "work",
     color: "primary",
-    badge: "Part-Time",
+    badge: "Completed ✅",
+    certificateId: "IPI#71079",
+  },
+  {
+    id: 2,
+    title: "Summer Training Intern",
+    company: "India Space Academy (ISA)",
+    companyUrl: "https://www.isa.ac.in",
+    period: "May 19 – Jul 2, 2026",
+    location: "Online",
+    description: [
+      "Selected for Summer Training 2026 by India Space Academy, Department of Space Education, New Delhi.",
+      "Subject: Remote Sensing & GIS Using Python — applying geospatial data analysis with Python.",
+      "Enrolment No: 974545 | 45-day program covering training + guided project work.",
+    ],
+    techStack: ["Python", "GIS", "Remote Sensing", "Geospatial Analysis"],
+    type: "work",
+    color: "secondary",
+    badge: "In Progress 🚀",
   },
 ];
-
 
 export const education = [
   {
@@ -38,6 +44,7 @@ export const education = [
     icon: "School",
     score: "7.95 / 10",
     location: "Chennai, Tamil Nadu, India",
+    current: true,
   },
   {
     degree: "Higher Secondary Education (+2)",
@@ -47,6 +54,7 @@ export const education = [
     icon: "BookOpen",
     score: "2.86 GPA",
     location: "Nepal",
+    current: false,
   },
   {
     degree: "Secondary Education (10th)",
@@ -56,5 +64,6 @@ export const education = [
     icon: "GraduationCap",
     score: "3.20 GPA",
     location: "Nepal",
+    current: false,
   },
 ];

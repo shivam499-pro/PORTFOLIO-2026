@@ -105,24 +105,55 @@ export const experience = [
 export const certifications = [
   {
     id: 1,
-    name: "Hackathon Participation Certificate",
-    issuer: "Smart India Hackathon 2025",
+    name: "Smart India Hackathon 2025",
+    issuer: "Ministry of Education, Govt. of India",
     date: "2025",
+    description: "Participation certificate for building AI-powered Cattle Breed Recognition system for Ministry of Fisheries, Animal Husbandry & Dairying.",
     credentialUrl: null,
     icon: "🏆",
     type: "Hackathon",
   },
   {
     id: 2,
+    name: "Java Programming Internship",
+    issuer: "InternPe",
+    date: "Jan 2026",
+    description: "Internship Completion Certificate (CID: IPI#71079) for Java Programming domain.",
+    credentialUrl: "https://www.internpe.in",
+    icon: "💼",
+    type: "Internship",
+  },
+  {
+    id: 3,
+    name: "SRM Hackathon 10.0",
+    issuer: "SRM University, Kattankulathur",
+    date: "2025",
+    description: "Certificate of Participation in Hackathon 10.0 hosted by Team SRM Hackathon, Department of Networking and Communications.",
+    credentialUrl: null,
+    icon: "⚡",
+    type: "Hackathon",
+  },
+  {
+    id: 4,
+    name: "HACK HUSTLE 2.0",
+    issuer: "Saveetha Engineering College, Chennai",
+    date: "April 2026",
+    description: "Certificate of Participation for team Sentinel Squad at Hack Hustle 2.0 conducted by Tech Society, 29-30 April 2026.",
+    credentialUrl: null,
+    icon: "🚀",
+    type: "Hackathon",
+  },
+  {
+    id: 5,
     name: "LinkedIn Learning Course Completion",
     issuer: "LinkedIn",
     date: "2025",
+    description: "Completed professional development course on LinkedIn Learning platform.",
     credentialUrl: "https://www.linkedin.com/in/shivam-jaiswal-425656337",
     icon: "📜",
     type: "Course",
   },
 ];
-
 export const achievements = [
   {
     id: 1,
