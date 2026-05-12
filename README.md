@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌌 Shivam Jaiswal — Portfolio 2026
+# 🌌 My Portfolio 
 
 **A production-ready personal portfolio built with a modern AI-assisted workflow**
 
