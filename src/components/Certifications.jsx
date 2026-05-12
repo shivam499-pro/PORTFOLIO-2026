@@ -1,31 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, ExternalLink, Trophy, BookOpen } from 'lucide-react';
+import { Award, ExternalLink } from 'lucide-react';
+import { certifications } from '../data/skills';
 
-const certs = [
-  {
-    title: "Smart India Hackathon 2025",
-    issuer: "Ministry of Education, Govt. of India",
-    date: "2025",
-    description: "Participation certificate for building AI-powered Cattle Breed Recognition system for Ministry of Fisheries, Animal Husbandry & Dairying.",
-    icon: Trophy,
+// Map type to colors
+const typeStyles = {
+  Hackathon: {
     color: "text-orange-500",
     bgColor: "bg-orange-50",
-    credentialUrl: null,
-    badge: "Hackathon",
   },
-  {
-    title: "LinkedIn Learning Course Completion",
-    issuer: "LinkedIn",
-    date: "2025",
-    description: "Completed professional development course on LinkedIn Learning platform.",
-    icon: BookOpen,
+  Internship: {
+    color: "text-purple-500",
+    bgColor: "bg-purple-50",
+  },
+  Course: {
     color: "text-blue-600",
     bgColor: "bg-blue-50",
-    credentialUrl: "https://www.linkedin.com/in/shivam-jaiswal-425656337",
-    badge: "Course",
   },
-];
+};
 
 const Certifications = () => {
   return (
@@ -38,14 +30,17 @@ const Certifications = () => {
       >
         Certifications & Achievements
       </motion.h2>
-      <p className="text-on-surface-variant mb-12">More certifications coming soon — actively learning! 🚀</p>
+      <p className="text-on-surface-variant mb-12">
+        More certifications coming soon — actively learning! 🚀
+      </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-bento-gap">
-        {certs.map((cert, i) => {
-          const Icon = cert.icon;
+        {certifications.map((cert, i) => {
+          const style = typeStyles[cert.type] || typeStyles["Course"];
+
           return (
             <motion.div
-              key={i}
+              key={cert.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -54,15 +49,21 @@ const Certifications = () => {
               className="glass-card p-8 group"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className={`p-4 rounded-xl ${cert.bgColor} ${cert.color} shrink-0`}>
-                  <Icon size={24} />
+                <div
+                  className={`p-4 rounded-xl ${style.bgColor} ${style.color} shrink-0 text-2xl flex items-center justify-center w-14 h-14`}
+                >
+                  {cert.icon}
                 </div>
                 <div>
-                  <span className="pill text-[9px] bg-white/40 mb-2 inline-block">{cert.badge}</span>
+                  <span className="pill text-[9px] bg-white/40 mb-2 inline-block">
+                    {cert.type}
+                  </span>
                   <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight">
-                    {cert.title}
+                    {cert.name}
                   </h3>
-                  <p className="text-on-surface-variant text-sm font-medium mt-1">{cert.issuer}</p>
+                  <p className="text-on-surface-variant text-sm font-medium mt-1">
+                    {cert.issuer}
+                  </p>
                 </div>
               </div>
 
@@ -94,7 +95,7 @@ const Certifications = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: certifications.length * 0.1 }}
           className="glass-card p-8 border-dashed border-outline-variant flex flex-col items-center justify-center text-center space-y-4 opacity-70 group"
         >
           <div className="w-14 h-14 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center text-outline group-hover:text-primary group-hover:border-primary transition-colors duration-500">
