@@ -10,7 +10,7 @@
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-latest-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
-[🌐 Live Demo](#) • [📄 Resume](https://drive.google.com/file/d/1I5uKcn2eCvqjZY9YpojK0NHgxGmeVlG4/view) • [💼 LinkedIn](https://www.linkedin.com/in/shivam-jaiswal-425656337) • [🐙 GitHub](https://github.com/shivam499-pro)
+[🌐 Live Demo](https://jaisuuu-portfolio.vercel.app) • [📄 Resume](https://drive.google.com/file/d/1I5uKcn2eCvqjZY9YpojK0NHgxGmeVlG4/view) • [💼 LinkedIn](https://www.linkedin.com/in/shivam-jaiswal-425656337) • [🐙 GitHub](https://github.com/shivam499-pro)
 
 </div>
 
