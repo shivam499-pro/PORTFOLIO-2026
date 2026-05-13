@@ -23,8 +23,9 @@ export const personalInfo = {
         collegeEmail: "shivamjaiswal.2024.cse@rajalakshmi.edu.in",
     },
 
-    resumeLink: "https://drive.google.com/file/d/1I5uKcn2eCvqjZY9YpojK0NHgxGmeVlG4/view?usp=drive_link",
-    resumeDownload: "https://drive.google.com/uc?export=download&id=1I5uKcn2eCvqjZY9YpojK0NHgxGmeVlG4",
+
+    resumeLink: "/Shivam_Jaiswal_Resume.pdf",
+    resumeDownload: "/Shivam_Jaiswal_Resume.pdf",
 
     languages: [
         { name: "Hindi", level: "Native" },
