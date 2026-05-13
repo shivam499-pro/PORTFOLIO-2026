@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, MessageSquare, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
-
-const EMAILJS_SERVICE_ID = 'service_hhci94h';
-const EMAILJS_TEMPLATE_ID = 'template_1wsc23b';
-const EMAILJS_PUBLIC_KEY = 'Cjs10MWHpdcxaoWfv';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 
 const Contact = () => {

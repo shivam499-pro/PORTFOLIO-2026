@@ -1,22 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, ExternalLink } from 'lucide-react';
+import { Award, ExternalLink, Trophy, BookOpen, Briefcase, Zap, Rocket } from 'lucide-react';
 import { certifications } from '../data/skills';
 
-// Map type to colors
-const typeStyles = {
-  Hackathon: {
-    color: "text-orange-500",
-    bgColor: "bg-orange-50",
-  },
-  Internship: {
-    color: "text-purple-500",
-    bgColor: "bg-purple-50",
-  },
-  Course: {
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
-  },
+const iconMap = {
+  "🏆": { icon: Trophy, color: "text-orange-500", bgColor: "bg-orange-50" },
+  "💼": { icon: Briefcase, color: "text-purple-600", bgColor: "bg-purple-50" },
+  "⚡": { icon: Zap, color: "text-yellow-500", bgColor: "bg-yellow-50" },
+  "🚀": { icon: Rocket, color: "text-blue-500", bgColor: "bg-blue-50" },
+  "📜": { icon: BookOpen, color: "text-blue-600", bgColor: "bg-blue-50" },
 };
 
 const Certifications = () => {
@@ -30,13 +22,12 @@ const Certifications = () => {
       >
         Certifications & Achievements
       </motion.h2>
-      <p className="text-on-surface-variant mb-12">
-        More certifications coming soon — actively learning! 🚀
-      </p>
+      <p className="text-on-surface-variant mb-12">Real certificates. Still collecting more. 🎯</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-bento-gap">
         {certifications.map((cert, i) => {
-          const style = typeStyles[cert.type] || typeStyles["Course"];
+          const mapped = iconMap[cert.icon] || { icon: Award, color: "text-primary", bgColor: "bg-primary/10" };
+          const Icon = mapped.icon;
 
           return (
             <motion.div
@@ -49,21 +40,15 @@ const Certifications = () => {
               className="glass-card p-8 group"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div
-                  className={`p-4 rounded-xl ${style.bgColor} ${style.color} shrink-0 text-2xl flex items-center justify-center w-14 h-14`}
-                >
-                  {cert.icon}
+                <div className={`p-4 rounded-xl ${mapped.bgColor} ${mapped.color} shrink-0`}>
+                  <Icon size={24} />
                 </div>
                 <div>
-                  <span className="pill text-[9px] bg-white/40 mb-2 inline-block">
-                    {cert.type}
-                  </span>
+                  <span className="pill text-[9px] bg-white/40 mb-2 inline-block">{cert.type}</span>
                   <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight">
                     {cert.name}
                   </h3>
-                  <p className="text-on-surface-variant text-sm font-medium mt-1">
-                    {cert.issuer}
-                  </p>
+                  <p className="text-on-surface-variant text-sm font-medium mt-1">{cert.issuer}</p>
                 </div>
               </div>
 
@@ -103,7 +88,7 @@ const Certifications = () => {
           </div>
           <div>
             <p className="text-outline font-semibold">More Coming Soon</p>
-            <p className="text-xs text-outline mt-1">Actively pursuing NPTEL & cloud certs</p>
+            <p className="text-xs text-outline mt-1">Pursuing NPTEL, AWS & cloud certs</p>
           </div>
         </motion.div>
       </div>
